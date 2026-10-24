@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "name": "PCSX ReARMed (Libretro)",
+  "repository": "https://github.com/libretro/pcsx_rearmed.git",
+  "revision": "ff81ed17a15241d2f3730cdd7585b38e172532ca",
+  "source_date_epoch": 1790204415,
+  "role": "bundled-product-core",
+  "ndk": "29.0.14206865",
+  "api": 26,
+  "abi": "arm64-v8a",
+  "flags": {
+    "USE_ASYNC_CDROM": 0,
+    "USE_ASYNC_GPU": 0,
+    "USE_ASYNC_SPU": 0,
+    "NDRC_THREAD": 0,
+    "USE_LIBRETRO_VFS": 1
+  },
+  "notes": "Pinned product build with upstream Ari64 ARM64 JIT and software SIMD GPU. Threaded modes need later measurements. No proprietary BIOS or ROM. The desktop libpicofe submodule is verified by repository policy but excluded from staged sources and product binaries."
+}

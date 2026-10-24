@@ -6,3 +6,17 @@
 *.bin
 *.chd
 *.pbp
+
+/core/include/revision.h
+
+# Local source qualification output and private material
+/.local/
+/out/
+/build/
+/dist/
+/__pycache__/
+*.pyc
+*.keystore
+*.jks
+*.aab
+*.apk

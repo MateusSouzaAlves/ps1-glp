@@ -1,13 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
-ifneq ($(strip $(EMUORBIT_SOURCE_DESCRIBE)),)
-$(shell cd "$(LOCAL_PATH)" && (echo $(EMUORBIT_SOURCE_DESCRIBE)| sed -e 's/.*/#define REV "\0"/' > ../include/revision.h_))
-else
-$(shell cd "$(LOCAL_PATH)" && ((git describe --always || echo) | sed -e 's/.*/#define REV "\0"/' > ../include/revision.h_))
-endif
-$(shell cd "$(LOCAL_PATH)" && (diff -q ../include/revision.h_ ../include/revision.h > /dev/null 2>&1 || cp ../include/revision.h_ ../include/revision.h))
-$(shell cd "$(LOCAL_PATH)" && (rm ../include/revision.h_))
 
 USE_LIBRETRO_VFS ?= 1
 USE_ASYNC_CDROM ?= 1
@@ -263,11 +256,7 @@ SOURCES_C += \
 COREFLAGS += -DHAVE_RTHREADS
 endif
 
-ifneq ($(strip $(EMUORBIT_SOURCE_REVISION)),)
-GIT_VERSION := " $(EMUORBIT_SOURCE_REVISION)"
-else
-GIT_VERSION := " $(shell git rev-parse --short HEAD || echo unknown)"
-endif
+GIT_VERSION := " ff81ed17"
 ifneq ($(GIT_VERSION)," unknown")
   COREFLAGS += -DGIT_VERSION=\"$(GIT_VERSION)\"
 endif

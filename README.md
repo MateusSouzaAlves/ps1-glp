@@ -26,7 +26,7 @@ em um caminho sem espaços:
 
 O script usa API 26, `arm64-v8a`, `SOURCE_DATE_EPOCH=1790204415`, flags
 `USE_ASYNC_CDROM=0`, `USE_ASYNC_GPU=0`, `USE_ASYNC_SPU=0`, `NDRC_THREAD=0` e
-`USE_LIBRETRO_VFS=1`, além da identificação upstream `r26l-112-gff81ed1`.
+`USE_LIBRETRO_VFS=1`, além da identificação upstream completa `ff81ed17a15241d2f3730cdd7585b38e172532ca` no refresh de 24/10 (a receita anterior usava `r26l-112-gff81ed1`).
 O resultado fica em `out/libs/arm64-v8a/libretro.so`.
 A receita é isolada: não requer nem publica o código da interface, as ROMs ou
 a BIOS do app. O próprio `core/jni/Android.mk` e os arquivos incluídos no
@@ -49,3 +49,14 @@ que um APK futuro, suas outras bibliotecas ou sua forma de distribuição
 cumprem todas as licenças. Antes de distribuir uma versão com PS1 é preciso
 conferir a correspondência entre o binário efetivamente incluído e esta fonte,
 os avisos de terceiros e as obrigações da combinação final.
+
+
+## Component source refresh — 2026-10-24
+
+This tip updates the component sources/recipes identified in the source
+snapshot manifest. Older tags/commits remain historical snapshots. It does
+not assert that this entire current snapshot was the source of an earlier
+Play release, and does not certify the closed combined app or publish its
+remaining private host. References above to older artifact hashes or private
+application tags retain historical scope; they are not publicly available
+host-source substitutes. See SOURCE_REFRESH.md and releases/component-source-2026-10-24/manifest.json.

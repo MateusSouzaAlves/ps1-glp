@@ -31,6 +31,7 @@ if ($ndkProperties -notmatch 'Pkg.Revision\s*=\s*29\.0\.14206865') {
     throw 'This recipe was tested with Android NDK 29.0.14206865.'
 }
 New-Item -ItemType Directory -Path $output -Force | Out-Null
+[IO.File]::WriteAllText((Join-Path $sourceRoot 'include/revision.h'), '#define REV "ff81ed17a15241d2f3730cdd7585b38e172532ca"' + "`n")
 $objects = Join-Path $output 'obj'
 $libraries = Join-Path $output 'libs'
 $gitTools = Join-Path $env:ProgramFiles 'Git/usr/bin'
